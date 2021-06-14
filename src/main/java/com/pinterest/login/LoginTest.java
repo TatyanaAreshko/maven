@@ -15,6 +15,7 @@ public class LoginTest {
     public static void main(String[] args) throws Exception {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //открыть сайт
         driver.get("https://www.pinterest.com/");
@@ -39,11 +40,11 @@ public class LoginTest {
         
         //завершение скрипта
         System.out.println("Вход выполнен");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 
         WebElement buttonAvatar = driver.findElement(By.xpath("//*[@data-test-id=\"header-profile\"]"));
         buttonAvatar.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         WebElement akk = driver.findElement(By.xpath("//h1[contains(text(),'Tatyana Areshko')]"));
 
         if (akk.getText().equals("Tatyana Areshko")) {

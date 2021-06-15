@@ -2,9 +2,11 @@ package com.pinterest.login;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,9 +21,10 @@ public class LoginTest {
         setup();
         test1();
         test2();
+        //test3();
     }
 
-
+    // драйвер
     public static void setup() throws Exception {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -29,10 +32,9 @@ public class LoginTest {
 
         //открыть сайт
         driver.get("https://www.pinterest.com/");
-        //new WebDriverWait(driver,5).until(ExpectedConditions.urlContains("\"https://www.pinterest.com/\""));
 
-        new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Войти')]")));
+        /*new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Войти')]")));*/
 
         //нажать на кнопку "Войти"
         WebElement buttonEnter = driver.findElement(By.xpath("//div[contains(text(),'Войти')]"));
@@ -56,6 +58,7 @@ public class LoginTest {
         System.out.println("Вход выполнен");
     }
 
+    // авторизация
     public static void test1() throws Exception {
             WebElement buttonAvatar = driver.findElement(By.xpath("//*[@data-test-id=\"header-profile\"]"));
             buttonAvatar.click();
@@ -70,6 +73,7 @@ public class LoginTest {
             System.out.println("Вход на персональную страницу выполнен");
         }
 
+    // создание новой доски
     public static void test2() throws Exception{
         WebElement addBoard = driver.findElement(By.xpath("//body/div[@id='__PWS_ROOT__']/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/button[1]/div[1]/*[1]"));
         addBoard.click();
@@ -90,22 +94,28 @@ public class LoginTest {
         }
 
         WebElement searchInputArea = driver.findElement(By.id("boardEditName"));
-        searchInputArea.sendKeys("NewTestBoard");
+        searchInputArea.sendKeys("NewTestBoard2");
         WebElement buttonSearch = driver.findElement(By.xpath("//div[contains(text(),'Готово')]"));
         buttonSearch.click();
         System.out.println("Создано");
 
-        /*WebElement savePin = driver.findElement(By.cssSelector("button.RCK.Hsu.USg.adn.CCY.czT.Vxj.aZc.Zr3.hA-.Il7.Jrn.hNT.BG7.NTm.KhY.iyn"));
-        if (savePin.getText().equals("Сохраните несколько пинов на новой доске")) {
-            System.out.println("OK");
-        } else {
-            throw new Exception("Элемент не найден");
-        }
-        WebElement buttonPin = driver.findElement(By.xpath("//div[contains(text(),'Готово')]"));
-        buttonPin.click();*/
+        new WebDriverWait(driver, 30)
+           .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("__PWS_ROOT__")));
+
+        driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[2]/div/div[3]/div/div/button")).click();
 
         WebElement findLogoNewBoard = driver.findElement(By.cssSelector("h1.lH1.dyH.iFc.mWe.ky3.pBj.tg7.IZT"));
         driver.quit();
+    }
+
+    public static void test3(){
+        WebElement mainSearchInput = driver.findElement(By.name("searchBoxInput"));
+        mainSearchInput.sendKeys("Dragon Age");
+        new Actions(driver)
+                .sendKeys(mainSearchInput, Keys.ENTER)
+                .build()
+                .perform();
+        System.out.println("Fus");
     }
 
 

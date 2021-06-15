@@ -2,7 +2,6 @@ package com.pinterest.login;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,6 +29,10 @@ public class LoginTest {
 
         //открыть сайт
         driver.get("https://www.pinterest.com/");
+        //new WebDriverWait(driver,5).until(ExpectedConditions.urlContains("\"https://www.pinterest.com/\""));
+
+        new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Войти')]")));
 
         //нажать на кнопку "Войти"
         WebElement buttonEnter = driver.findElement(By.xpath("//div[contains(text(),'Войти')]"));

@@ -1,6 +1,5 @@
 package actions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,18 +14,8 @@ import org.testng.annotations.BeforeTest;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class Actions {
+public class TestApp {
     static WebDriver driver;
-
-    public static void main(String[] args) throws Exception {
-        WebDriverManager.chromedriver().setup();
-        setup();
-        login();
-        test1();
-        test2();
-        theEnd();
-        closeUp();
-    }
 
     @BeforeTest
     // драйвер

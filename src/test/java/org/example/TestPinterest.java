@@ -1,31 +1,27 @@
-package actions;
+package org.example;
 
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-
-import java.io.IOException;
+import org.testng.Assert;
+import org.testng.annotations.*;
 import java.util.concurrent.TimeUnit;
 
-public class TestApp {
-    static WebDriver driver;
+public class TestPinterest {
+    WebDriver driver;
 
     @BeforeTest
     // драйвер
-    public static void setup() throws Exception {
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);}
 
-    @BeforeMethod
-    public static void login() throws Exception{
+    @BeforeClass
+    public void login() {
         //открыть сайт
         driver.get("https://www.pinterest.com/");
         System.out.println("Вход на сайт выполнен успешно");
@@ -34,7 +30,7 @@ public class TestApp {
         WebElement buttonEnter = driver.findElement(By.xpath("//div[contains(text(),'Войти')]"));
         buttonEnter.click();
         WebElement loginWindow = driver.findElement(By.xpath("//h3[contains(text(),'Добро пожаловать в Pinterest')]"));
-        Assert.assertTrue("Добро пожаловать в Pinterest",true);
+        Assert.assertTrue(true, "Добро пожаловать в Pinterest");
 
         //входим на сайт
         WebElement setEmail = driver.findElement(By.id("email"));
@@ -50,33 +46,33 @@ public class TestApp {
 
     @Test
     // Проверка входа
-    public static void test1() throws Exception {
+    public void test1() throws Exception {
         WebElement buttonAvatar = driver.findElement(By.xpath("//*[@data-test-id=\"header-profile\"]"));
         buttonAvatar.click();
 
         WebElement akk = driver.findElement(By.xpath("//h1[contains(text(),'Tatyana Areshko')]"));
-        Assert.assertTrue("Tatyana Areshko",true);
+        Assert.assertTrue(true, "Tatyana Areshko");
         System.out.println("Вход на персональную страницу выполнен");
     }
 
     @Test
     // создание новой доски
-    public static void test2() throws Exception{
+    public void test2() throws Exception{
         WebElement addBoard = driver.findElement(By.xpath("//div[@data-test-id='boardActionsButton']"));
         addBoard.click();
         WebElement textShow = driver.findElement(By.xpath("//div[contains(text(),'Создать')]"));
-        Assert.assertTrue("Создать",true);
+        Assert.assertTrue(true, "Создать");
 
         WebElement addButton = driver.findElement(By.xpath("//div[contains(text(),'Доска')]"));
         addButton.click();
-        Assert.assertTrue("Доска",true);
+        Assert.assertTrue(true, "Доска");
 
         WebElement windowCreateBoard = driver.findElement(By.xpath("//h2[contains(text(),'Создание доски')]"));
-        Assert.assertTrue("Создание доски",true);
+        Assert.assertTrue(true, "Создание доски");
 
         //присваиваем имя доски
         WebElement searchInputArea = driver.findElement(By.id("boardEditName"));
-        searchInputArea.sendKeys("TestBoard");
+        searchInputArea.sendKeys("TestBoard111");
 
         //закрыть вредный попап
         WebElement buttonSearch = driver.findElement(By.xpath("//div[contains(text(),'Готово')]"));
@@ -88,13 +84,14 @@ public class TestApp {
     }
 
     @AfterClass
-    public static void theEnd() throws IOException {
+    public static void theEnd() {
         System.out.println("The End");
     }
 
     @AfterTest
-    public static void closeUp() {
+    public void closeUp() {
         driver.close();
     }
+
 
 }

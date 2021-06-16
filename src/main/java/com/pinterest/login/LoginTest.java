@@ -1,20 +1,8 @@
 package com.pinterest.login;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
-
 
 public class LoginTest {
-    static WebDriver driver;
+    /*static WebDriver driver;
 
     public static void main(String[] args) throws Exception {
         WebDriverManager.chromedriver().setup();
@@ -33,8 +21,8 @@ public class LoginTest {
         //открыть сайт
         driver.get("https://www.pinterest.com/");
 
-        /*new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Войти')]")));*/
+        *//*new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Войти')]")));*//*
 
         //нажать на кнопку "Войти"
         WebElement buttonEnter = driver.findElement(By.xpath("//div[contains(text(),'Войти')]"));
@@ -118,7 +106,7 @@ public class LoginTest {
         System.out.println("Fus");
     }
 
-
+*/
 
 }
 

@@ -25,8 +25,8 @@ public class ValidLoginTest extends BaseTest{
         loginPage.enterPass(VALID_PASS);
         loginPage.enterButton.click();
         //loginPage.AssertInvalidPassError();
-        mainPage = new MainPage(driver);
-        mainPage.EnterInPersonPageButton.click();
+        //mainPage = new MainPage(driver);
+        //mainPage.EnterInPersonPageButton.click();
     }
 
     /*@AfterClass

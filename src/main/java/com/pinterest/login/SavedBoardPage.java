@@ -3,9 +3,8 @@ package com.pinterest.login;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class SavedBoardPage extends LoginPage{
+public class SavedBoardPage extends BasePage{
     WebDriver driver;
 
     @FindBy(xpath = "//h1[contains(text(),'Tatyana Areshko')]")
@@ -25,8 +24,8 @@ public class SavedBoardPage extends LoginPage{
 
     public SavedBoardPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
+        //this.driver = driver;
+        //PageFactory.initElements(driver,this);
     }
 
     public SavedBoardPage enterBoard(String board){

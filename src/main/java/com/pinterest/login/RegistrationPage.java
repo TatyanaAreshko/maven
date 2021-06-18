@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegistrationPage {
+public class RegistrationPage extends BasePage{
     WebDriver driver;
 
     @FindBy(id = "email")
@@ -21,8 +21,10 @@ public class RegistrationPage {
     public WebElement regButton;
 
     public RegistrationPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+
     }
 
     public RegistrationPage enterRegEmail(String regEmail){

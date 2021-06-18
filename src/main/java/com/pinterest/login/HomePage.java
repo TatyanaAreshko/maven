@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class HomePage extends BasePage{
     WebDriver driver;
     @FindBy(xpath = "//div[contains(text(),'Войти')]")
     public WebElement signInButton;
@@ -27,8 +27,10 @@ public class HomePage {
     public WebElement scrollButton;
 
     public HomePage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+
     }
 
     public void open(){

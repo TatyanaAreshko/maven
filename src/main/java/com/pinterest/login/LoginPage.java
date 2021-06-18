@@ -32,8 +32,10 @@ public class LoginPage{
         return this;
     }
 
-    public void enterPass(String pass){
-        passInput.sendKeys(pass);    }
+    public LoginPage enterPass(String pass){
+        passInput.sendKeys(pass);
+        return this;
+    }
 
     public void AssertInvalidPassError(){
         boolean passError = driver.findElement(By.xpath("//div[@data-test-id='touchableErrorMessage']")).isDisplayed();

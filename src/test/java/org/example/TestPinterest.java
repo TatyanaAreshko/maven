@@ -1,48 +1,16 @@
 package org.example;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
-import java.util.concurrent.TimeUnit;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
 
-public class TestPinterest {
-    WebDriver driver;
+public class TestPinterest extends BaseTest{
 
-    @BeforeTest
-    // драйвер
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);}
-
-    @BeforeClass
-    public void login() {
-        //открыть сайт
-        driver.get("https://www.pinterest.com/");
-        System.out.println("Вход на сайт выполнен успешно");
-
-        //нажать на кнопку "Войти"
-        WebElement buttonEnter = driver.findElement(By.xpath("//div[contains(text(),'Войти')]"));
-        buttonEnter.click();
-        WebElement loginWindow = driver.findElement(By.xpath("//h3[contains(text(),'Добро пожаловать в Pinterest')]"));
-        Assert.assertTrue(true, "Добро пожаловать в Pinterest");
-
-        //входим на сайт
-        WebElement setEmail = driver.findElement(By.id("email"));
-        setEmail.sendKeys("tasja1990@tut.by");
-        WebElement setPass = driver.findElement(By.id("password"));
-        setPass.sendKeys("Luria140140");
-        WebElement buttonEnterModal = driver.findElement(By.cssSelector("button.red.SignupButton.active"));
-        buttonEnterModal.click();
-
-        //завершение скрипта
-        System.out.println("Вход в аккаунт выполнен");
-    }
+    private WebDriver driver;
 
     @Test
     // Проверка входа

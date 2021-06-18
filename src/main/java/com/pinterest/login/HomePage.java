@@ -11,6 +11,21 @@ public class HomePage {
     public WebElement signInButton;
 //    public WebElement signInButton = driver.findElement(By.xpath("//div[contains(text(),'Войти')]"));
 
+    @FindBy(xpath = "//div[contains(text(),'Регистрация')]")
+    public WebElement regInButton;
+
+    @FindBy(xpath = "//div[@data-test-id='header-about-button']")
+    public WebElement descriptionButton;
+
+    @FindBy(xpath = "//div[@data-test-id='header-business-button']")
+    public WebElement businessButton;
+
+    @FindBy(xpath = "//div[@data-test-id='header-blog-button']")
+    public WebElement blogButton;
+
+    @FindBy(xpath = "//div[@data-test-id='page-scroll-arrow']")
+    public WebElement scrollButton;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

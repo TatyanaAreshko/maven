@@ -37,6 +37,7 @@ public class TestPinterest extends BaseTest{
         //закрыть вредный попап
         WebElement buttonSearch = driver.findElement(By.xpath("//div[contains(text(),'Готово')]"));
         buttonSearch.click();
+
         driver.findElement(By.xpath("//button[@aria-label='Готово']")).click();
 
         WebElement findLogoNewBoard = driver.findElement(By.cssSelector("h1.lH1.dyH.iFc.mWe.ky3.pBj.tg7.IZT"));

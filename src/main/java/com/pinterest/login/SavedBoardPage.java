@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SavedBoardPage extends BasePage{
-    WebDriver driver;
 
     @FindBy(xpath = "//h1[contains(text(),'Tatyana Areshko')]")
     public WebElement headerBoardPage;
@@ -22,10 +21,11 @@ public class SavedBoardPage extends BasePage{
     @FindBy(xpath = "//div[contains(text(),'Готово')]")
     public WebElement doneButton;
 
+    @FindBy(xpath = "//button[@aria-label='Готово']")
+    public WebElement popupCloseButton;
+
     public SavedBoardPage(WebDriver driver) {
         super(driver);
-        //this.driver = driver;
-        //PageFactory.initElements(driver,this);
     }
 
     public SavedBoardPage enterBoard(String board){
@@ -33,8 +33,9 @@ public class SavedBoardPage extends BasePage{
         return this;
     }
 
-    public void quit(){
-        driver.quit();
+    public void goToThisPage(){
+        driver.get("https://www.pinterest.com/tatyanaareshko0849/_saved/");
     }
+
 
 }

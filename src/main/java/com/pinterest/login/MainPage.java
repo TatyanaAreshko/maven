@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends BasePage {
-    WebDriver driver;
 
     @FindBy(xpath = "//*[@data-test-id=\"header-profile\"]")
     public WebElement EnterInPersonPageButton;

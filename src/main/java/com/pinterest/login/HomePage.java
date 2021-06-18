@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage{
-    WebDriver driver;
     @FindBy(xpath = "//div[contains(text(),'Войти')]")
     public WebElement signInButton;
 //    public WebElement signInButton = driver.findElement(By.xpath("//div[contains(text(),'Войти')]"));

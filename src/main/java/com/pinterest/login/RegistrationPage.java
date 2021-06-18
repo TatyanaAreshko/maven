@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage extends BasePage{
-    WebDriver driver;
 
     @FindBy(id = "email")
     private WebElement emailRegInput;

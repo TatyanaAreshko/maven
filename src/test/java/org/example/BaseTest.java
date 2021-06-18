@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
+// основной класс, с которого стартуют все тесты
 public class BaseTest {
     WebDriver driver;
     private HomePage homePage;
@@ -21,6 +22,8 @@ public class BaseTest {
     private final String VALID_PASS = "Test123";
 
 
+    // так как драйвер необходим для тестирования всего сайта, то вынесем его в отдельный метод,
+    // который будет запускаться до всех тестов. Все настройки драйвера указываем тут же.
     @BeforeSuite
     public void setup() {
         WebDriverManager.chromedriver().setup();
@@ -30,6 +33,8 @@ public class BaseTest {
 
     }
 
+    // каждый мой тест требует открытия страницы сайта и авторизации, поэтому вынесла все это в общий класс BaseTest,
+    // который наследуется остальными классами-тестами
     @BeforeTest
     public void login(){
         homePage = new HomePage(driver);

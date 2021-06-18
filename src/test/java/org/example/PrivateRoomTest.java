@@ -11,12 +11,14 @@ public class PrivateRoomTest extends BaseTest{
     private SavedBoardPage savedBoardPage;
     private final String NAME_BOARD = "TestBoard";
 
+    // до каждого теста личного аккаунта должен быть осуществлен входна личный аккаунт
     @BeforeMethod
     public void goToAccount() {
         mainPage = new MainPage(driver);
         mainPage.EnterInPersonPageButton.click();
     }
 
+    // здесь будут все тесты по личному аккаунту
     @Test
     public void createBoard(){
 
@@ -28,6 +30,8 @@ public class PrivateRoomTest extends BaseTest{
         savedBoardPage.popupCloseButton.click();
     }
 
+    // после каждого метода программа должна вернуться на главную страницу аккаунта,
+    // чтобы продолжить тестировать другие функции
     @AfterMethod
     public void backToPrivateRoom(){
         savedBoardPage.goToThisPage();

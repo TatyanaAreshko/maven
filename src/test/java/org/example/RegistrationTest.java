@@ -24,6 +24,7 @@ public class RegistrationTest extends BaseTest{
         registrationPage.enterRegPass(VALID_REG_PASS);
         registrationPage.enterRegAge(VALID_REG_AGE);
         registrationPage.regButton.click();
+        tearDown();
         System.out.println("Регистрация прошла успешно");
     }
 

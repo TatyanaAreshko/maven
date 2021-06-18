@@ -33,6 +33,26 @@ public class SavedBoardPage extends BasePage{
         return this;
     }
 
+    public SavedBoardPage addButton(){
+        addButton.click();
+        return this;
+    }
+
+    public SavedBoardPage addBoardButton(){
+        addBoardButton.click();
+        return this;
+    }
+
+    public SavedBoardPage doneButton(){
+        doneButton.click();
+        return this;
+    }
+
+    public SavedBoardPage popupCloseButton(){
+        popupCloseButton.click();
+        return this;
+    }
+
     public void goToThisPage(){
         driver.get("https://www.pinterest.com/tatyanaareshko0849/_saved/");
     }

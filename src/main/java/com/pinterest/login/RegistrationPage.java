@@ -3,7 +3,6 @@ package com.pinterest.login;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage extends BasePage{
 
@@ -21,9 +20,6 @@ public class RegistrationPage extends BasePage{
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-
     }
 
     public RegistrationPage enterRegEmail(String regEmail){
@@ -40,11 +36,6 @@ public class RegistrationPage extends BasePage{
         ageRegInput.sendKeys(regAge);
         return this;
     }
-
-    public void quit(){
-        driver.quit();
-    }
-
 
 
 }

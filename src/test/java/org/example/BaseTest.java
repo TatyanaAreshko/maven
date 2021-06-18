@@ -37,13 +37,14 @@ public class BaseTest {
     // который наследуется остальными классами-тестами
     @BeforeTest
     public void login(){
-        homePage = new HomePage(driver);
-        homePage.open();
-        homePage.signInButton.click();
-        loginPage = new LoginPage(driver);
-        loginPage.enterEmail(VALID_EMAIL);
-        loginPage.enterPass(VALID_PASS);
-        loginPage.enterButton.click();
+        new HomePage(driver)
+                .open()
+                .signInButton();
+        new LoginPage(driver)
+                .enterEmail(VALID_EMAIL)
+                .enterPass(VALID_PASS)
+                .enterButton()
+                .AssertInvalidEmailError();
     }
 
     @AfterTest

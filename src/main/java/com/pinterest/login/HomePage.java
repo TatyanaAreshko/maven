@@ -3,12 +3,10 @@ package com.pinterest.login;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage{
     @FindBy(xpath = "//div[contains(text(),'Войти')]")
     public WebElement signInButton;
-//    public WebElement signInButton = driver.findElement(By.xpath("//div[contains(text(),'Войти')]"));
 
     @FindBy(xpath = "//div[contains(text(),'Регистрация')]")
     public WebElement regInButton;
@@ -27,13 +25,15 @@ public class HomePage extends BasePage{
 
     public HomePage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-
     }
 
     public void open(){
         driver.get("https://www.pinterest.com/");    }
+
+    public HomePage signInButton(){
+        signInButton.click();
+        return this;
+    }
 
 
 }

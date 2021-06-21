@@ -27,8 +27,9 @@ public class HomePage extends BasePage{
         super(driver);
     }
 
-    public void open(){
-        driver.get("https://www.pinterest.com/");    }
+    public HomePage open(){
+        driver.get("https://www.pinterest.com/");
+        return this; }
 
     public HomePage signInButton(){
         signInButton.click();

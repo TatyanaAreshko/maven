@@ -2,7 +2,6 @@ package org.example;
 
 import com.pinterest.login.MainPage;
 import com.pinterest.login.SavedBoardPage;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -31,10 +30,10 @@ public class PrivateRoomTest extends BaseTest{
 
     // после каждого метода программа должна вернуться на главную страницу аккаунта,
     // чтобы продолжить тестировать другие функции
-    @AfterMethod
+   /* @AfterMethod
     public void backToPrivateRoom(){
         savedBoardPage.goToThisPage();
-    }
+    }*/
 
 
 

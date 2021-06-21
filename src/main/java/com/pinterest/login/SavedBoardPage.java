@@ -1,5 +1,6 @@
 package com.pinterest.login;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,31 +29,37 @@ public class SavedBoardPage extends BasePage{
         super(driver);
     }
 
+    @Step("Ввести в поле ввода название доски")
     public SavedBoardPage enterBoard(String board){
         boardInputArea.sendKeys(board);
         return this;
     }
 
+    @Step("Нажать кнопку 'Добавить пин или доску'")
     public SavedBoardPage addButton(){
         addButton.click();
         return this;
     }
 
+    @Step("Нажать кнопку 'Добавить доску'")
     public SavedBoardPage addBoardButton(){
         addBoardButton.click();
         return this;
     }
 
+    @Step("Нажать кнопку подтверждения создания 'Готово'")
     public SavedBoardPage doneButton(){
         doneButton.click();
         return this;
     }
 
+    @Step("Закрыть рекламный попап")
     public SavedBoardPage popupCloseButton(){
         popupCloseButton.click();
         return this;
     }
 
+    //@Step("Вернуться на личную страницу")
     public SavedBoardPage goToThisPage(){
         driver.get("https://www.pinterest.com/tatyanaareshko0849/_saved/");
         return this;

@@ -3,6 +3,7 @@ package org.example;
 import com.pinterest.login.HomePage;
 import com.pinterest.login.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -24,6 +25,7 @@ public class BaseTest {
 
     // так как драйвер необходим для тестирования всего сайта, то вынесем его в отдельный метод,
     // который будет запускаться до всех тестов. Все настройки драйвера указываем тут же.
+    @Description("Запуск драйвера с параметрами")
     @BeforeSuite
     public void setup() {
         WebDriverManager.chromedriver().setup();
@@ -35,6 +37,7 @@ public class BaseTest {
 
     // каждый мой тест требует открытия страницы сайта и авторизации, поэтому вынесла все это в общий класс BaseTest,
     // который наследуется остальными классами-тестами
+    @Description("Авторизация на сайте с валидными входными данными")
     @BeforeTest
     public void login(){
         new HomePage(driver)
@@ -47,6 +50,7 @@ public class BaseTest {
                 .AssertInvalidEmailError();
     }
 
+    @Description("Закрытие драйвера")
     @AfterTest
     public void tearDown(){
         driver.quit();

@@ -1,5 +1,6 @@
 package com.pinterest.login;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,14 +28,21 @@ public class HomePage extends BasePage{
         super(driver);
     }
 
+    @Step("Открытие страницы сайта")
     public HomePage open(){
         driver.get("https://www.pinterest.com/");
         return this; }
 
+    @Step("Нажать кнопку 'Войти'")
     public HomePage signInButton(){
         signInButton.click();
         return this;
     }
+
+    //@Step("Нажать кнопку 'Зарегистрироваться'")
+    public HomePage regInButton(){
+        regInButton.click();
+        return this;}
 
 
 }

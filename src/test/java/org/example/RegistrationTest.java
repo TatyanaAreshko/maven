@@ -3,7 +3,6 @@ package org.example;
 import com.pinterest.login.HomePage;
 import com.pinterest.login.RegistrationPage;
 import io.qameta.allure.Description;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class RegistrationTest extends BaseTest{
@@ -18,7 +17,7 @@ public class RegistrationTest extends BaseTest{
 
     @Description("Регистрация нового пользователя сайта")
     @Test
-    @Ignore
+
     public void RegisterTest(){
         new HomePage(driver)
             .open()

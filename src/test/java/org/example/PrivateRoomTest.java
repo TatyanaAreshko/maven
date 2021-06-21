@@ -4,10 +4,9 @@ import com.pinterest.login.MainPage;
 import com.pinterest.login.SavedBoardPage;
 import io.qameta.allure.Description;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-@Ignore
+
 public class PrivateRoomTest extends BaseTest{
     private MainPage mainPage;
     private SavedBoardPage savedBoardPage;

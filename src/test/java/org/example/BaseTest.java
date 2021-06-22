@@ -4,8 +4,9 @@ import com.pinterest.login.HomePage;
 import com.pinterest.login.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
-import org.openqa.selenium.WebDriver;
+import listener.CustomLogger;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 // основной класс, с которого стартуют все тесты
 public class BaseTest {
-    WebDriver driver;
+    EventFiringWebDriver driver;
     private HomePage homePage;
     private LoginPage loginPage;
     private final String INVALID_PASS = "123";
@@ -29,10 +30,10 @@ public class BaseTest {
     @BeforeSuite
     public void setup() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new EventFiringWebDriver(new ChromeDriver());
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        driver.register(new CustomLogger());
     }
 
     // каждый мой тест требует открытия страницы сайта и авторизации, поэтому вынесла все это в общий класс BaseTest,

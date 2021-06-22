@@ -59,9 +59,9 @@ public class SavedBoardPage extends BasePage{
         return this;
     }
 
-    //@Step("Вернуться на личную страницу")
+    @Step("Вернуться на личную страницу")
     public SavedBoardPage goToThisPage(){
-        driver.get("https://www.pinterest.com/tatyanaareshko0849/_saved/");
+        driver.get("https://www.pinterest.com/tatyanaareshko0849/_saved");
         return this;
     }
 

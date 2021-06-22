@@ -9,7 +9,7 @@ public class RegistrationTest extends BaseTest{
 
     private RegistrationPage registrationPage;
     private HomePage homePage;
-    private final String VALID_REG_EMAIL = "2c7wk@vmani.com";
+    private final String VALID_REG_EMAIL = "1zjvc@wimsg.com";
     // Временная почта https://www.crazymailing.com/ru/
     private final String VALID_REG_PASS = "Test123";
     private final String VALID_REG_AGE = "18";

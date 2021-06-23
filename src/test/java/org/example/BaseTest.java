@@ -4,16 +4,17 @@ import com.pinterest.login.HomePage;
 import com.pinterest.login.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
-import listener.CustomLogger;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
 // основной класс, с которого стартуют все тесты
+@Slf4j
 public class BaseTest {
     EventFiringWebDriver driver;
     private HomePage homePage;
@@ -33,7 +34,7 @@ public class BaseTest {
         driver = new EventFiringWebDriver(new ChromeDriver());
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.register(new CustomLogger());
+        //driver.register(new CustomLogger());
     }
 
     // каждый мой тест требует открытия страницы сайта и авторизации, поэтому вынесла все это в общий класс BaseTest,
@@ -52,7 +53,7 @@ public class BaseTest {
     }
 
     @Description("Закрытие драйвера")
-    @AfterTest
+    @AfterMethod
     public void tearDown(){
         driver.quit();
     }

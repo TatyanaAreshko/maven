@@ -3,13 +3,16 @@ package org.example;
 import com.pinterest.login.HomePage;
 import com.pinterest.login.RegistrationPage;
 import io.qameta.allure.Description;
+import listener.CustomLogger;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(CustomLogger.class)
 public class RegistrationTest extends BaseTest{
 
     private RegistrationPage registrationPage;
     private HomePage homePage;
-    private final String VALID_REG_EMAIL = "1zjvc@wimsg.com";
+    private final String VALID_REG_EMAIL = "2wkbh@wimsg.com";
     // Временная почта https://www.crazymailing.com/ru/
     private final String VALID_REG_PASS = "Test123";
     private final String VALID_REG_AGE = "18";

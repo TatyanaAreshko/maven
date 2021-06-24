@@ -4,7 +4,6 @@ import com.pinterest.login.HomePage;
 import com.pinterest.login.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
-import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterMethod;
@@ -14,7 +13,8 @@ import org.testng.annotations.BeforeTest;
 import java.util.concurrent.TimeUnit;
 
 // основной класс, с которого стартуют все тесты
-@Slf4j
+//@Slf4j
+//@Listeners(CustomLogger.class)
 public class BaseTest {
     EventFiringWebDriver driver;
     private HomePage homePage;

@@ -46,6 +46,7 @@ public class SavedBoardPage extends BasePage{
 
     @Step("Нажать кнопку редактирования доски")
     public SavedBoardPage edit(){
+        log.info("----------------------------------------I EDIT BOARD----------------------------------------------");
         edit.click();
         return this;
     }
@@ -117,6 +118,7 @@ public class SavedBoardPage extends BasePage{
 
     @Step("Нажать кнопку 'Готово'")
     public SavedBoardPage deleteBoard(){
+        log.info("----------------------------------------I DELETE----------------------------------------------");
         deleteBoard.click();
         return this;
     }
@@ -154,6 +156,7 @@ public class SavedBoardPage extends BasePage{
 
     @Step("Нажать кнопку подтверждения создания 'Готово'")
     public SavedBoardPage doneButton(){
+        log.info("-----------------------------------I CREATE BOARD-------------------------------------------");
         doneButton.click();
         return this;
     }
@@ -166,6 +169,7 @@ public class SavedBoardPage extends BasePage{
 
     @Step("Вернуться на личную страницу")
     public SavedBoardPage goToThisPage(){
+        log.info("-----------------------------------REDIRECT TO ACCOUNT---------------------------------------");
         driver.get("https://www.pinterest.com/tatyanaareshko0849/_saved");
         return this;
     }

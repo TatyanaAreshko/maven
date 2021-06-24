@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/TASJA/IdeaProjects/areshko-autotests/src/test/java"><classes>
-        <class name="org.example.PrivateRoomTest">
+    <test verbose="2" preserve-order="true" name="C:/Users/TASJA/IdeaProjects/areshko-autotests/src/test/java">
+        <classes><class name="org.example.PrivateRoomTest">
             <methods>
                 <include name="createBoard"/>
                 <include name="editBoard"/>
-            </methods>
-        </class>
-        <class name="org.example.RegistrationTest">
-            <methods>
-                <include name="RegisterTest"/>
-            </methods>
-        </class>
-        <class name="org.example.TestPinterest">
-            <methods>
-                <include name="test1"/>
-            </methods>
-        </class>
-    </classes>
+                <include name="deleteBoard"/>
+            </methods></class>
+            <class name="org.example.RegistrationTest">
+                <methods>
+                    <include name="RegisterTest"/>
+                </methods>
+            </class>
+            <class name="org.example.TestPinterest">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>

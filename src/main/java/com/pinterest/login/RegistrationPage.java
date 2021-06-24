@@ -1,12 +1,11 @@
 package com.pinterest.login;
 
 import io.qameta.allure.Step;
-import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-@Slf4j
+
 public class RegistrationPage extends BasePage{
 
     @FindBy(id = "email")

@@ -25,18 +25,21 @@ public class LoginPage extends BasePage{
 
     @Step("Ввод валидного email в поле логина")
     public LoginPage enterEmail(String email){
+        log.info("----------------------------------------I ENTER EMAIL----------------------------------------------");
         emailInput.sendKeys(email);
         return this;
     }
 
     @Step("Ввод валидного пароля")
     public LoginPage enterPass(String pass){
+        log.info("----------------------------------------I ENTER PASS-----------------------------------------------");
         passInput.sendKeys(pass);
         return this;
     }
 
     @Step("Нажать кнопку 'Войти'")
     public LoginPage enterButton(){
+        log.info("----------------------------------------I ENTER TO THE SITE----------------------------------------");
         enterButton.click();
         return this;
     }

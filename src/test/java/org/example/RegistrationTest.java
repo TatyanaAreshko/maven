@@ -3,11 +3,9 @@ package org.example;
 import com.pinterest.login.HomePage;
 import com.pinterest.login.RegistrationPage;
 import io.qameta.allure.Description;
-import listener.CustomLogger;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(CustomLogger.class)
+//@Listeners(CustomLogger.class)
 public class RegistrationTest extends BaseTest{
 
     private RegistrationPage registrationPage;

@@ -1,11 +1,12 @@
 package com.pinterest.login;
 
 import io.qameta.allure.Step;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
+@Slf4j
 public class MainPage extends BasePage {
 
     @FindBy(xpath = "//*[@data-test-id=\"header-profile\"]")
@@ -19,6 +20,7 @@ public class MainPage extends BasePage {
         searchField.click();
         searchField.clear();
         searchField.sendKeys(value);
+        log.info("----------------------------------------VALUE----------------------------------------------");
     }
 
 

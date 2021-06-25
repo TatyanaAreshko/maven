@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.DataProvider;
 
 public class AutoEraseFieldProvider {
-    @DataProvider(name = "currencyValueDataProvider")
+    @DataProvider(name = "ValueDataProvider")
     public static Object[][] manageDataProvider() {
         return new Object[][]{
                 {"1"},

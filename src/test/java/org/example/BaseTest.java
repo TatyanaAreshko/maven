@@ -6,7 +6,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
@@ -53,7 +53,7 @@ public class BaseTest {
     }
 
     @Description("Закрытие драйвера")
-    @AfterMethod
+    @AfterClass
     public void tearDown(){
         driver.quit();
     }

@@ -12,8 +12,8 @@ public class PrivateRoomTest extends BaseTest {
     private MainPage mainPage;
     private SavedBoardPage savedBoardPage;
     private final String NAME_BOARD = "TestBoard";
-    private final String EDIT_NAME_BOARD = "New Test Board";
-    private final String EDIT_DESC_BOARD = "This is description";
+    private final String EDIT_NAME_BOARD = "New Test Board2";
+    private final String EDIT_DESC_BOARD = "This is description2";
 
     // до каждого теста личного аккаунта должен быть осуществлен переход на страницу личного аккаунта
     @Description("Переход на страницу личного аккаунта пользователя")

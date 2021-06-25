@@ -21,7 +21,8 @@ public class MainPage extends BasePage {
         searchField.click();
         searchField.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), "");
         searchField.sendKeys(value);
-        log.info("----------------------------------------VALUE----------------------------------------------");
+        searchField.sendKeys(Keys.ENTER);
+        log.info("----------------------------------------SEARCH VALUE---------------------------------------");
     }
 
 

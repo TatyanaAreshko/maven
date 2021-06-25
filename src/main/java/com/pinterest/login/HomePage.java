@@ -37,14 +37,14 @@ public class HomePage extends BasePage{
 
     @Step("Нажать кнопку 'Войти'")
     public HomePage signInButton(){
-        log.info("-----------------------------------------I ENTER----------------------------------------------");
+        log.info("-----------------------------------------ENTER Pinterest-------------------------------------");
         signInButton.click();
         return this;
     }
 
     //@Step("Нажать кнопку 'Зарегистрироваться'")
     public HomePage regInButton(){
-        log.info("----------------------------------------I REGISTRATION---------------------------------------");
+        log.info("----------------------------------------REGISTRATION-----------------------------------------");
         regInButton.click();
         return this;}
 

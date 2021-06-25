@@ -22,7 +22,7 @@ public class MainPage extends BasePage {
         searchField.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), "");
         searchField.sendKeys(value);
         searchField.sendKeys(Keys.ENTER);
-        log.info("----------------------------------------SEARCH VALUE---------------------------------------");
+        log.info("CHECK SEARCH VALUE: " + value);
     }
 
 

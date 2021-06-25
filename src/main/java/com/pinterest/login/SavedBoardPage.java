@@ -46,7 +46,7 @@ public class SavedBoardPage extends BasePage{
 
     @Step("Нажать кнопку редактирования доски")
     public SavedBoardPage edit(){
-        log.info("----------------------------------------I EDIT BOARD----------------------------------------------");
+        log.info("----------------------------------------EDIT BOARD----------------------------------------------");
         edit.click();
         return this;
     }
@@ -118,7 +118,7 @@ public class SavedBoardPage extends BasePage{
 
     @Step("Нажать кнопку 'Готово'")
     public SavedBoardPage deleteBoard(){
-        log.info("----------------------------------------I DELETE----------------------------------------------");
+        log.info("----------------------------------------DELETE BOARD----------------------------------------------");
         deleteBoard.click();
         return this;
     }
@@ -156,7 +156,7 @@ public class SavedBoardPage extends BasePage{
 
     @Step("Нажать кнопку подтверждения создания 'Готово'")
     public SavedBoardPage doneButton(){
-        log.info("-----------------------------------I CREATE BOARD-------------------------------------------");
+        log.info("-----------------------------------CREATE BOARD-------------------------------------------");
         doneButton.click();
         return this;
     }
